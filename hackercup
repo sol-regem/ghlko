@@ -1,0 +1,24 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    ifstream in ("input.txt");
+    ofstream out ("output.txt");
+    int T,N;
+     string S;
+    cin >> T;
+   
+    for (int c =0 ; c <T; ++c) {
+        cin >> N>> S;
+        int sub = 0;
+        for (char ch : S) {
+            if (ch == 'B')
+                ++sub;
+            else
+                --sub;
+        }
+       cout << "Case #" << c << ": " << ((sub == 1 || sub == -1) ? 'Y' : 'N') << endl;
+    }
+    return 0;
+}
